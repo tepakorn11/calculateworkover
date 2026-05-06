@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>CalculateWorkover — เครื่องคำนวณชีวิตประจำวัน</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai+Looped:wght@400;500;600;700;800&family=Sarabun:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="shell">
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <span class="pill"><span class="dot"></span>คำนวณสด · ไม่บันทึกข้อมูล</span>
+    <div class="topbar-tools">
+      <button class="tool-btn" id="cur-btn">
+        <span>สกุลเงิน</span>
+        <span class="seg on" data-cur="THB">฿ THB</span>
+        <span class="seg" data-cur="USD">$ USD</span>
+      </button>
+      <button class="tool-btn" id="theme-btn">
+        <span id="theme-ico">☀</span><span id="theme-lbl">Light</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <h1 class="brand">Calculate<span class="accent">workover</span></h1>
+    <p class="brand-sub">เครื่องคำนวณค่าใช้จ่ายและชีวิตประจำวัน · 22 เครื่องมือใน 6 หมวด · ใช้งานง่าย ไม่บันทึกข้อมูล</p>
+  </header>
+
+  <!-- Category nav -->
+  <nav class="cat-nav" id="cat-nav">
+    <button class="cat active" data-cat="daily">
+      <span class="cat-num">หมวด 1</span>
+      <span class="cat-name">ในบ้าน &amp; เดินทาง</span>
+      <span class="cat-en">DAILY · 5</span>
+    </button>
+    <button class="cat" data-cat="finance">
+      <span class="cat-num">หมวด 2</span>
+      <span class="cat-name">การเงิน &amp; ช้อปปิ้ง</span>
+      <span class="cat-en">FINANCE · 4</span>
+    </button>
+    <button class="cat" data-cat="property">
+      <span class="cat-num">หมวด 3</span>
+      <span class="cat-name">ที่อยู่อาศัย &amp; อสังหาฯ</span>
+      <span class="cat-en">PROPERTY · 3</span>
+    </button>
+    <button class="cat" data-cat="health">
+      <span class="cat-num">หมวด 4</span>
+      <span class="cat-name">สุขภาพ &amp; ไลฟ์สไตล์</span>
+      <span class="cat-en">HEALTH · 4</span>
+    </button>
+    <button class="cat" data-cat="work">
+      <span class="cat-num">หมวด 5</span>
+      <span class="cat-name">การทำงาน &amp; เวลา</span>
+      <span class="cat-en">WORK · 3</span>
+    </button>
+    <button class="cat" data-cat="cooking">
+      <span class="cat-num">หมวด 6</span>
+      <span class="cat-name">การทำอาหาร</span>
+      <span class="cat-en">KITCHEN · 2</span>
+    </button>
+  </nav>
+
+  <!-- Tool sub-nav -->
+  <div class="tools-nav" id="tools-nav"></div>
+
+  <!-- Stage -->
+  <section class="stage">
+    <div class="panel" id="input-panel"></div>
+    <div class="result">
+      <div class="result-eyebrow">RESULT · ผลลัพธ์</div>
+      <div class="result-label" id="r-label">ยอดสุทธิ</div>
+      <div class="big-number"><span class="currency" id="r-cur">฿</span><span id="r-main">0</span><span class="frac" id="r-frac">.00</span><span class="unit" id="r-unit"></span></div>
+      <div class="result-sub" id="r-sub">— เริ่มกรอกข้อมูลด้านซ้าย —</div>
+      <div class="breakdown">
+        <h4>รายละเอียดการคำนวณ</h4>
+        <div id="r-rows"></div>
+      </div>
+      <div id="r-extra"></div>
+    </div>
+  </section>
+
+  <div class="foot">
+    <div>© 2026 CalculateWorkover · Made in Bangkok</div>
+    <div>คำนวณบนเครื่องคุณ · ไม่ส่งข้อมูลออกนอก</div>
+  </div>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
